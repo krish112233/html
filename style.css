@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-image: url(home.jpeg);
+}
+
+.nav{
+  background-color:#576574;
+  width: 100%;
+  height: 15vh;
+}
+
+.nav ul li{
+  list-style: none;
+  display: inline-block;
+  margin-top: 50px;
+  margin-left: 20px;
+  font-family:Sans-Serif;
+}
+
+.nav ul li a{
+  text-decoration: none;
+  color:#fff;
+  transition: 0.1 all ease;
+}
