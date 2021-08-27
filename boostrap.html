@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" >
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link href="style.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container-fluid">
+   <div class="row" >
+      <div class="col-12">
+      <h5>PORTFOLIA</h5>
+         <ul class="list-unstyled list-inline " >
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li class="" ><a class=" dropdown dropdown-toggle" data-toggle="dropdown"  href="#">About us</a>
+            <div class="dropdown-menu" >
+            <ul>
+            <li><a class="dropdown-item"  href="#">Project1</a></li>
+            <li><a class="dropdown-item"  href="#">Project2</a></li>
+            </ul>
+            </div>                                                
+            </li>
+            <li><a href="#">Gallery</a></li>
+         </ul>
+      </div>
+      <div class="header" >
+            <marquee>Welcome to my website</marquee>
+      </div>
+      <div class="form" >
+      <input type="search" class="form-control" placeholder="Search here...."><label>
+      </div>
+      <div class="col-7 shadow">
+         <h3>Sub heading</h3>
+         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+         <a href="#">Read more...</a>
+      </div>
+      <div class="">
+        
+      </div>
+   </div>
+   <div class="form-group form-inline">
+   <h4>FORM</h4>
+   <img src="2.jpg" id="images" >
+      <input type="email" class="form-control" placeholder="email..." id="user" >
+      <div id="show_error" ></div>
+      <input type="password" class="form-control" placeholder="password..." id="password" >
+      <div id="show" ></div>
+      <input type="checkbox"/>     <label><a href="#" onclick="PopUp()">forget & password</a></label>
+       <input type="submit" value="Submit" id="submit" class="btn btn-primary" >
+   </div>
+   <div class="can">
+         <h2>coding</h2>
+          <div class="progress"><div class="progress-bar progress bg-danger progress-bar-striped progress-bar-animated" style="width:70%;" >90%</div><label class="progress-bar progress bg-success progress-bar-striped progress-bar-animated" style="width:30%;" >HTML</label></div><br>
+          <div class="progress"><div class="progress-bar progress bg-warning progress-bar-striped progress-bar-animated" style="width:70%;" >80%</div><label class="progress-bar progress bg-primary progress-bar-striped progress-bar-animated" style="width:30%;" >CSS</label></div><br>
+          <div class="progress"><div class="progress-bar progress bg-dark progress-bar-striped progress-bar-animated" style="width:70%;" >70%</div><label class="progress-bar progress bg-warning progress-bar-striped progress-bar-animated" style="width:30%;" >JAVASCRIPT</label></div><br>
+          <div class="progress"><div class="progress-bar progress bg-primary progress-bar-striped progress-bar-animated" style="width:70%;" >66%</div><label class="progress-bar progress bg-info progress-bar-striped progress-bar-animated" style="width:30%;" >JQURIES</label></div><br>
+          <div class="progress"><div class="progress-bar progress bg-info progress-bar-striped progress-bar-animated" style="width:70%;" >86%</div><label class="progress-bar progress bg-dark progress-bar-striped progress-bar-animated" style="width:30%;" >BOOSTRAP</label></div>
+      </div>
+   </div>
+       <div class="footer">
+       <a href="#">Private & policy</a>
+       <a href="#">Terms & condition</a>
+       <a href="#">Details</a>
+       <a href="#">@copyright2021</a>
+       </div>
+       
+   </div>
+   </div>
+</div>
+<script>
+$(document).ready(function(){
+  $('#submit') .click(function(){
+ var user = $('#user').val();
+ 
+ if(user == ""){
+ $('#show_error').html("**PLEASE FILL THIS FIELD")
+ $('#show_error').css("color","red")
+ return true;;
+ }
+ 
+ if((user.length <= 5) || (user.length >= 25)){
+ $('#show_error').html("**THIS USERNAME MUST BETWEEN 5 TO 25 LETTERS")
+ $('#show_error').css("color","red")
+ return true;;
+ }
+  });
+  
+  $('#submit') .click(function(){
+   var a = $('#password').val();
+   
+   if(a == ""){
+   $('#show').html("**PLEASE FILL THIS FIELD")
+   $('#show').css("color","red")
+   return true;;
+   }
+   
+   if((a.length <= 5) || (user.length >= 25)){
+   $('#show').html("**THIS USERNAME MUST BETWEEN 5 TO 25 LETTERS")
+   $('#show').css("color","red")
+   return true;;
+   }
+  });
+});
+</script>
+</body>
+</html>
