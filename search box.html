@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+
+#div{
+width:100%;
+height:auto;
+border:1px solid #000;
+}
+ul li{
+list-style:none;
+border-bottom:1px solid #000;
+}
+ul li a{
+text-decoration:none;
+color:#000;
+font-family:monospace;
+font-weight:bolder;
+padding:6px;
+margin:3px;
+display:block;
+font-size:20px;
+text-align:center;
+}
+a:hover{
+background:#dfe6e9;
+transition:all .4s;
+}
+#myInput{
+width:96%;
+padding:2%;
+outline:none;
+}
+</style>
+</head>
+<body>
+<input type="text" id="myInput" placeholder="names..." onkeyup="search()">
+<div id="div" >
+<ul id="myUl" >
+<li><a href="#">Ram</a></li>
+<li><a href="#">Shyam</a></li>
+<li><a href="#">Aditya</a></li>
+<li><a href="#">Krishna</a></li>
+<li><a href="#">Ravi</a></li>
+<li><a href="#">Priyanshu</a></li>
+</ul>
+</div>
+<script type="text/javascript">
+function search(){
+let filter = document.getElementById("myInput").value.toUpperCase();
+let ul = document.getElementById("myUl");
+let li = ul.getElementsByTagName("li");
+
+for(var i = 0;i<li.length;i++){
+let a = li[i].getElementsByTagName("a")[0];
+
+let textvalue = a.textContent || a.innerHTML;
+
+if(textvalue.toUpperCase().indexOf(filter) > -1){
+li[i].style.display = "";
+}else{
+li[i].style.display = "none";
+}
+
+}
+}
+</script>
+</body>
+</html>
