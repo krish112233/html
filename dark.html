@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+h3{
+text-align:center;
+font-size:25px;
+font-family:monospace;
+color:#000;
+margin:5% 0;
+border-bottom:1px solid #000;
+}
+#image{
+width:250px;
+height:50vh;
+margin:0 15%;
+}
+p{
+padding:4%;
+text-align:justify;
+font-family:monospace;
+text-transform:capitalize;
+}
+
+label{
+position:absolute;
+top:5px;
+right:20px;
+width:45px;
+height:22px;
+border:2px solid;
+border-radius:20px;
+}
+label:before{
+content:'';
+position:absolute;
+top:0px;
+right:18px;
+width:20px;
+height:17px;
+border:2px solid;
+border-radius:20px;
+}
+label.active:before{
+left:24px;
+background:#fff;
+}
+
+body.night{
+background:#000;
+color:#fff;
+}
+</style>
+</head>
+<body>
+<h3>Day To Night App</h3>
+<div id="div">
+<img src="1.jpeg" id="image">
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</div>
+<label id="dark"></label>
+<script type="text/javascript">
+var a = document.getElementById("card").innerHTML;
+
+for(var i=1;i<=7;i++){
+document.write(a + "<br>")
+}
+
+var Contant = document.getElementsByTagName('body')[0];
+var darkMode = document.getElementById('dark');
+darkMode.addEventListener('click', function(){
+darkMode.classList.toggle('active')
+Contant.classList.toggle('night')
+});
+</script>
+</body>
+</html>
