@@ -4,22 +4,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 body{
 display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
 min-height:100vh;
-background:background:rgba(245, 40, 145, 0.8);;
+background:rgba(245, 40, 145, 0.8);
 }
 #div{
 width:100%;
 height:auto;
-border:1px solid #000;
+border:1px solid #fff;
 }
 ul li{
 list-style:none;
-border-bottom:1px solid #000;
+border-bottom:1px solid #fff;
 }
 ul li a{
 text-decoration:none;
@@ -38,8 +43,16 @@ transition:all .4s;
 }
 #myInput{
 width:96%;
-padding:2%;
+padding:4%;
 outline:none;
+border-radius:35px;
+background:rgba(255,255,255,0.1);
+border:none;
+border:1px solid rgba(0,0,0,0.1);
+text-align:center;
+font-family: 'Poppins', sans-serif;
+color:#fff;
+margin:2%;
 }
 h3{
 text-align:center;
@@ -56,7 +69,6 @@ border-bottom:1px solid #fff;
 <ul id="myUl" >
 <li><a href="#">Ram</a></li>
 <li><a href="#">Shyam</a></li>
-<li><a href="#">Aditya</a></li>
 <li><a href="#">Krishna</a></li>
 <li><a href="#">Ravi</a></li>
 <li><a href="#">Priyanshu</a></li>
