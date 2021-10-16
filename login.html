@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+overflow:hidden;
+animation:all 1s linear infinite;
+}
+
+section{
+display:flex;
+justify-content:center;
+height:100vh;
+align-items:center;
+filter:blur(100px);
+}
+section .color{
+position:absolute;
+}
+
+section .color:nth-child(1){
+top:1%;
+width:300px;
+height:300px;
+background:rgba(255, 4, 153, 1);
+}
+
+section .color:nth-child(2){
+top:45%;
+right:0%;
+width:300px;
+height:300px;
+background:rgba(59, 255, 12, 0.77);
+}
+section .color:nth-child(3){
+top:70%;
+right:60%;
+width:200px;
+height:200px;
+background:rgba(255, 255, 116, 1);
+}
+section .color:nth-child(4){
+top:70%;
+right:0%;
+width:200px;
+height:200px;
+background:#48dbfb;
+}
+.container{
+position:absolute;
+top:25%;
+left:15%;
+border-radius:5px;
+width:250px;
+height:300px;
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(0,0,0,0.1);
+backdrop-filter:blur(5px);
+box-shadow:0px 25px 45px rgba(0,0,0,0.01);
+}
+@keyframes all{
+0%{
+filter:hue-rotate(0deg);
+}
+100%{
+filter:hue-rotate(360deg);
+}
+}
+h2{
+width:38%;
+margin:2% 18%;
+color:#fff;
+font-size:18px;
+font-family:monospace;
+font-weight:bolder;
+}
+h2::before{
+content:'';
+position:absolute;
+top:8%;
+left:17%;
+width:20%;
+height:3px;
+background:#fff;
+}
+#input{
+margin:6% 6%;
+}
+
+#input input{
+width:100%;
+padding:10px 20px;
+border-radius:35px;
+outline:none;
+border:none;
+text-align:center;
+font-family:monospace;
+font-size:15px;
+color:#fff;
+background:rgba(255,255,255,0.2);
+border:1px solid rgba(255,255,255,0.4);
+box-shadow:0px 25px 45px rgba(0,0,0,0.01);
+
+}
+
+#password{
+margin:6% 6%;
+}
+
+#password input{
+padding:10px 20px;
+width:100%;
+border-radius:20px;
+outline:none;
+border:none;
+text-align:center;
+font-family:monospace;
+font-size:15px;
+background:rgba(255,255,255,0.2);
+border:1px solid rgba(255,255,255,0.4);
+box-shadow:0px 25px 45px rgba(0,0,0,0.01);
+}
+
+#submit{
+margin:0 6%;
+}
+
+#submit input{
+padding:10px 20px;
+width:50%;
+outline:none;
+border:none;
+font-family:monospace;
+font-size:15px;
+font-weight:bolder;
+cursor:pointer;
+background:crimson;
+color:#fff;
+border-radius:35px;
+background:rgba(255,255,255,0.2);
+border:1px solid rgba(255,255,255,0.4);
+box-shadow:0px 25px 45px rgba(0,0,0,0.01);
+transition:all .4s;
+}
+#submit input:hover{
+background:rgba(255, 40, 145, 0.99);
+}
+p{
+text-decoration:none;
+color:blue;
+margin:6% 6%;
+font-family:monospace;
+}
+p a{
+text-decoration:none;
+}
+p span{
+color:#fff;
+}
+
+p a:hover{
+text-decoration:underline;
+}
+
+.box{
+position:absolute;
+top:6%;
+left:70%;
+width:100px;
+height:100px;
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(0,0,0,0.1);
+backdrop-filter:blur(5px);
+border-radius:10px;
+box-shadow:0px 25px 45px rgba(0,0,0,0.01);
+}
+
+.box2{
+position:absolute;
+top:6%;
+left:6%;
+width:70px;
+height:70px;
+border-radius:10px;
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(0,0,0,0.1);
+backdrop-filter:blur(5px);
+box-shadow:0px 25px 45px rgba(0,0,0,0.01);
+}
+
+h3{
+position:absolute;
+top:2%;
+left:25%;
+font-family: 'Poppins', sans-serif;
+font-size:20px;
+border-bottom:1px solid #000;
+}
+</style>
+</head>
+<body>
+<h3>BEAUTIFUL FORM DESIN</h3>
+<section>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+</section>
+<div class="container">
+<h2>Login Form</h2>
+<div class="form">
+<div id="input" >
+<input type="email" placeholder="E-mail">
+</div>
+<div id="password" >
+<input type="password" placeholder="Password">
+</div>
+<div id="submit" >
+<input type="Submit" value="Login">
+</div>
+</div>
+<p><span>Forgot Password?</span><a href="#">Click here</a></p>
+<p><span>Create another account?</span> <a href="#">Click here</a></p>
+</div>
+<div class="box"></div>
+<div class="box2"></div>
+</body>
+</html>
