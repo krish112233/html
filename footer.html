@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+<style>
+*{
+margin:0;
+padding:0;
+}
+
+body{
+display:flex;
+justify-content:flex-end;
+align-items:flex-end;
+min-height:100vh;
+background:#262626;
+font-family: 'Poppins', sans-serif;
+}
+footer{
+position:relative;
+width:100%;
+height:100px;
+background:#3586ff;
+padding:20px 50px;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+footer .social-icon,
+footer .menu{
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:10px 0;
+flex-wrap:wrap;
+}
+
+footer .social-icon li,
+footer .menu li{
+list-style:none;
+}
+
+footer .social-icon a,
+footer .menu li a{
+font-size:2em;
+color:#fff;
+margin:0 10px;
+display:inline-block;
+transition:all 0.5s;
+}
+footer .social-icon a:hover{
+transform:translateY(-10px);
+}
+
+footer .menu li a{
+font-size:1em;
+color:#fff;
+margin:0 10px;
+display:inline-block;
+transition:all 0.5s;
+text-decoration:none;
+font-family: 'Poppins', sans-serif;
+}
+
+footer p{
+color:#fff;
+}
+
+h3{
+position:absolute;
+top:40%;
+left:22%;
+color:#fff;
+letter-spacing:1px;
+font-size:25px;
+}
+
+h3::before{
+content:'';
+position:absolute;
+top:83%;
+left:0%;
+width:35%;
+height:3px;
+background:#fff;
+}
+</style>
+</head>
+<body>
+<h3>Simple Footer Desin</h3>
+<footer>
+<div class="waves" >
+<div id="wave" ></div>
+<div id="wave" ></div>
+<div id="wave" ></div>
+<div id="wave" ></div>
+</div>
+<ul class="social-icon">
+<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+<li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+<li><a href="#"><ion-icon name="logo-youtube"></ion-icon></a></li>
+</ul>
+
+<ul class="menu" >
+<li><a href="#">Home</a></li>
+<li><a href="#">Team</a></li>
+<li><a href="#">Product</a></li>
+<li><a href="#">Details</a></li>
+</ul>
+<p>@2021 KRISH KUMAR | All Right Reserved</p>
+</footer>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
