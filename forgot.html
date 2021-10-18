@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+body{
+overflow:hidden;
+}
+
+section{
+display:flex;
+justify-content:center;
+height:100vh;
+align-items:center;
+filter:blur(100px);
+}
+section .color{
+position:absolute;
+}
+
+section .color:nth-child(1){
+top:1%;
+width:300px;
+height:300px;
+background:rgba(255, 4, 153, 1);
+}
+
+section .color:nth-child(2){
+top:45%;
+right:0%;
+width:300px;
+height:300px;
+background:rgba(59, 255, 12, 0.77);
+}
+section .color:nth-child(3){
+top:70%;
+right:60%;
+width:200px;
+height:200px;
+background:rgba(255, 255, 116, 1);
+}
+section .color:nth-child(4){
+top:70%;
+right:0%;
+width:200px;
+height:200px;
+background:#48dbfb;
+}
+.container{
+position:absolute;
+top:25%;
+left:15%;
+border-radius:5px;
+width:250px;
+height:300px;
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(0,0,0,0.1);
+backdrop-filter:blur(5px);
+box-shadow:0px 25px 45px rgba(0,0,0,0.01);
+}
+h3{
+margin:2% 18%;
+color:#fff;
+font-size:18px;
+font-family:monospace;
+font-weight:bolder;
+}
+h3::before{
+content:'';
+position:absolute;
+top:8%;
+left:17%;
+width:22%;
+height:3px;
+background:#fff;
+}
+#input{
+margin:6% 6%;
+}
+
+#input input{
+width:100%;
+padding:10px 20px;
+border-radius:35px;
+outline:none;
+border:none;
+text-align:center;
+font-family:monospace;
+font-size:15px;
+color:#fff;
+background:rgba(255,255,255,0.2);
+border:1px solid rgba(255,255,255,0.4);
+box-shadow:0px 25px 45px rgba(0,0,0,0.01);
+}
+#submit{
+margin:0% 6%;
+}
+
+#submit input{
+padding:10px 20px;
+width:50%;
+outline:none;
+border:none;
+font-family:monospace;
+font-size:15px;
+font-weight:bolder;
+cursor:pointer;
+background:crimson;
+color:#fff;
+border-radius:35px;
+background:rgba(255,255,255,0.2);
+border:1px solid rgba(255,255,255,0.4);
+box-shadow:0px 25px 45px rgba(0,0,0,0.01);
+transition:all .4s;
+}
+#submit input:hover{
+letter-spacing:2px;
+background:rgba(255, 40, 145, 0.99);
+}
+
+#ancor{
+position:absolute;
+top:90%;
+left:30%;
+color:#fff;
+text-decoration:none;
+font-family:monospace;
+font-size:20px;
+font-weight:lighter;
+}
+#ancor:hover{
+text-decoration:underline;
+}
+</style>
+</head>
+<body>
+<section>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+</section>
+<div class="container">
+<h3>Forgot Password</h3>
+<form action="information.html" >
+<div class="form">
+<div id="input" >
+<input type="number" id="num"  placeholder="Number">
+</div>
+<div id="submit" >
+<input type="Submit" id="sub"  value="NEXT">
+</div>
+<a href="#" id="ancor" >or by email</a>
+</div>
+</div>
+</form>
+<script>
+document.getElementById("ancor").addEventListener("click", function(){
+document.getElementById("num").setAttribute("type","email");
+document.getElementById("num").setAttribute("placeholder","email");
+document.getElementById("ancor").innerHTML = "or Mobile Number"
+})
+</script>
+</body>
+</html>
