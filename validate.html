@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<style type="text/css">
+*{
+margin:0;
+padding:0;
+}
+body{
+background:#81ecec;
+}
+
+.container{
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+.header{
+width:80%;
+height:8vh;
+background:linear-gradient(to left,darkcyan,magenta);
+
+}
+.header h2{
+color:#fff;
+font-family:monospace;
+text-align:center;
+margin-top:15px;
+}
+.form{
+width:80%;
+height:55vh;
+background:linear-gradient(to bottom,#00cec9,#a29bfe);
+}
+
+.form-control{
+margin-left:35px;
+position:relative;
+}
+.form-control input{
+padding:2%;
+outline:none;
+border:none;
+display:block;
+border-radius:15px;
+}
+.form-control.success input{
+border-color:#2ecc71;
+}
+.form-control.error input{
+border-color:#e74c3c;
+}
+.form-control label{
+color:#fff;
+font-size:15px;
+}
+.form-control input:focus{
+border-color: #777;
+}
+.form-control i{
+position:absolute;
+right:32%;
+top:23px;
+visibility:hidden;
+}
+
+.form-control.error.fas fa-exclamation-circle{
+color:red;
+visibility:visible;
+}
+
+.form-control.success.far fa-check-circle {
+color:red;
+visibility:visible;
+}
+
+.form-control.success input{
+border:2px solid green;
+visibility:visible;
+}
+.form-control.error input{
+border:2px solid red;
+visibility:visible;
+}
+.form-control small{
+visibility:hidden;
+color:red;
+}
+.form-control.error small{
+visibility:visible;
+}
+.form-control.success small{
+visibility:visible;
+color:green;
+}
+#submit{
+margin-left:18%;
+margin-top:5px;
+border:none;
+background:crimson;
+color:#fff;
+cursor:pointer;
+width:50%;
+padding:2%;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header" >
+     <h2>Registration Form</h2>
+  </div>
+<form class="form" id="form" >
+  <div class="form-control">
+    <label>Username</label><br>
+    <input type="text" id="username" placeholder="Enter Your Name....">
+    <small>error msg</small>
+    </div>
+    <div class="form-control">
+    <label>Email</label><br>
+    <input type="email" id="email" placeholder="Enter Your E-mail...." >
+    <small>error msg</small>
+    </div>
+    <div class="form-control">
+    <label>Phone</label><br>
+    <input type="tel" id="Phone" placeholder="Enter Your phone...." >
+    <small>error msg</small>
+    </div>
+    <div class="form-control">
+    <label>Password</label><br>
+    <input type="password" id="password" placeholder="Enter Your Password" >
+    <small>error msg</small>
+    </div>
+    <div class="form-control">
+    <label>Confirm Password</label><br>
+    <input type="password" id="cpassword" placeholder="Check Password" >
+    <small>error msg</small>
+    </div>
+    <input type="submit" id="submit">
+</form>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+const form = document.getElementById("form");
+const username = document.getElementById("username");
+const email = document.getElementById("email");
+const phone = document.getElementById("Phone");
+const password = document.getElementById("password");
+const cpassword = document.getElementById("cpassword");
+
+//add event
+
+form.addEventListener("submit", (event)=>{
+event.preventDefault()
+validate()
+})
+
+const validate = ()=>{
+const usernameVal = username.value.trim()
+const emailVal = email.value.trim()
+const phoneValue = Phone.value.trim()
+const passwordVal = password.value.trim()
+const cpasswordVal = cpassword.value.trim()
+
+//username
+if(usernameVal === ""){
+setErrormsg(username, "username cannot be blank");
+}else if (usernameVal.length < 3){
+setErrormsg(username, "username min 3 character");
+}else{
+setSuccessmsg(username, "confirm");
+}
+//make more email validate
+const isEmail = (emailVal) =>{
+var atsymbol = emailVal.indexOf("@");
+
+if(atsymbol.length < 1) return false;
+
+var dot = emailVal.lastIndexOf(".");
+if(dot < atsymbol + 2) return false;
+if(dot === emailVal.length - 1) return false;
+return true;
+}
+
+//email validate
+if(emailVal === ""){
+setErrormsg(email, "email cannot be blank");
+}else if ((!isEmail(emailVal))){
+setErrormsg(email, "Not a valid Email");
+}else{
+setSuccessmsg(email, "valid");
+}
+
+//phone validate
+if(phoneValue === "" ){
+setErrormsg(phone, "phone cannot be blank");
+}else if(phoneValue.length != 10){
+setErrormsg(phone, "phone number must be ten character");
+}else{
+setSuccessmsg(phone, "Confirm");
+}
+
+
+//validate password
+if(passwordVal === ""){
+setErrormsg(password, "password cannot be blank");
+}else if(passwordVal.length < 6){
+setErrormsg(password, "password number must be greater than 6 character");
+}else{
+setSuccessmsg(password, "Confirm");
+}
+
+if(cpasswordVal === ""){
+setErrormsg(cpassword, "confirm password cannot be blank");
+}else if(passwordVal != cpasswordVal){
+setErrormsg(cpassword, "password are not match");
+}else{
+setSuccessmsg(cpassword, "Confirm");
+}
+}
+
+
+
+function setErrormsg(input,errorMsg){
+const formcontrol = input.parentElement;
+const small = formcontrol.querySelector("small");
+formcontrol.className = "form-control error ";
+small.innerText = errorMsg;
+}
+
+function setSuccessmsg(success,successMsg){
+const formcontrol1 = success.parentElement;
+const smallDel = formcontrol1.querySelector("small");
+formcontrol1.className = "form-control success ";
+smallDel.innerText = successMsg;
+}
+
+</script>
+</body>
+</html>
