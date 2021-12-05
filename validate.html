@@ -22,7 +22,7 @@ align-items:center;
 flex-direction:column;
 }
 .header{
-width:80%;
+width:90%;
 height:8vh;
 background:linear-gradient(to left,darkcyan,magenta);
 
@@ -34,9 +34,10 @@ text-align:center;
 margin-top:15px;
 }
 .form{
-width:80%;
-height:55vh;
+width:90%;
+height:65vh;
 background:linear-gradient(to bottom,#00cec9,#a29bfe);
+
 }
 
 .form-control{
@@ -44,11 +45,21 @@ margin-left:35px;
 position:relative;
 }
 .form-control input{
-padding:2%;
-outline:none;
-border:none;
 display:block;
-border-radius:15px;
+width:75%;
+height:20px;
+padding:3% 5%;
+border:none;
+border-radius:10px;
+border:1px solid rgba(0,0,0,0.1);
+outline:none;
+box-shadow:-4px -4px 5px rgba(164, 254, 254, 0.8),
+           inset 4px 4px 10px rgba(0, 0, 0, 0.05),
+           inset -4px -4px 10px rgba(255,255,255,1),
+           
+           4px 4px 5px rgba(164, 254, 254, 0.5);
+font-family:monospace;
+background:transparent;
 }
 .form-control.success input{
 border-color:#2ecc71;
@@ -59,6 +70,7 @@ border-color:#e74c3c;
 .form-control label{
 color:#fff;
 font-size:15px;
+font-family:sans-serif;
 }
 .form-control input:focus{
 border-color: #777;
@@ -100,16 +112,60 @@ visibility:visible;
 color:green;
 }
 #submit{
-margin-left:18%;
-margin-top:5px;
+margin-top:21px;
 border:none;
-background:crimson;
+background:linear-gradient(to right,rgba(255, 223, 0, 1),rgba(255, 0, 23, 1));
 color:#fff;
 cursor:pointer;
-width:50%;
+width:100%;
+height:7vh;
 padding:2%;
+font-family:Arial,sans-serif;
+font-size:18px;
+}
+input::placeholder{
+color:#ccc;
+}
+#toggle{
+position:absolute;
+top:100%;
+right:60px;
+transform:translateY(-50px);
+width:25px;
+height:25px;
+background:url(show.png);
+background-size:cover;
+cursor:pointer;
+opacity:0.5;
+border:1px solid rgba(0,0,0,0.1);
+}
+#toggle.hide{
+width:25px;
+height:25px;
+background:url(close.png);
+background-size:cover;
 }
 
+#toggle1{
+position:absolute;
+top:100%;
+right:60px;
+transform:translateY(-50px);
+width:25px;
+height:25px;
+background:url(show.png);
+background-size:cover;
+cursor:pointer;
+opacity:0.5;
+border:1px solid rgba(0,0,0,0.1);
+}
+
+#toggle1.hide1{
+width:25px;
+height:25px;
+background:url(close.png);
+background-size:cover;
+}
 </style>
 </head>
 <body>
@@ -136,11 +192,13 @@ padding:2%;
     <div class="form-control">
     <label>Password</label><br>
     <input type="password" id="password" placeholder="Enter Your Password" >
+    <div id="toggle1" onclick="showHide1()"></div>
     <small>error msg</small>
     </div>
     <div class="form-control">
     <label>Confirm Password</label><br>
     <input type="password" id="cpassword" placeholder="Check Password" >
+    <div id="toggle" onclick="showHide()"></div>
     <small>error msg</small>
     </div>
     <input type="submit" id="submit">
@@ -150,6 +208,10 @@ padding:2%;
 
 <script type="text/javascript">
 
+
+
+
+const toggle = document.getElementById("toggle");
 const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
@@ -244,6 +306,25 @@ formcontrol1.className = "form-control success ";
 smallDel.innerText = successMsg;
 }
 
+function showHide(){
+if(cpassword.type === "password"){
+cpassword.setAttribute("type", "text");
+toggle.classList.add("hide");
+}else{
+cpassword.setAttribute("type", "password");
+toggle.classList.remove("hide");
+}
+}
+
+function showHide1(){
+if(password.type === "password"){
+password.setAttribute("type", "text");
+toggle1.classList.add("hide1");
+}else{
+password.setAttribute("type", "password");
+toggle1.classList.remove("hide1");
+}
+}
 </script>
 </body>
 </html>
