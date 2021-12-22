@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style type="text/css">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+body{
+background:#ecf0f1;
+}
+
+.containers{
+width:100%;
+height:100vh;
+}
+.header{
+width:100%;
+height:10vh;
+background:#079992;
+display:flex;
+align-items:center;
+justify-content:flex-end;
+}
+h2{
+color:#fff;
+font-family:serif;
+font-size:17px;
+margin-right:45%;
+}
+.header i{
+color:#fff;
+margin-left:5%;
+margin-right:3%;
+}
+.header i:hover{
+color:blue;
+}
+
+.scroll{
+overflow: auto;
+white-space: nowrap;
+}
+.scroll a{
+display: inline-block;
+color: #000;
+text-align: center;
+padding: 14px;
+text-decoration: none;
+}
+
+.scroll a:hover {
+background-color: #777;
+}
+
+#search {
+width:90%;
+padding:2%;
+border:none;
+outline:none;
+margin:5%;
+box-shadow:-6px -6px 10px rgba(255, 255, 255, 1),
+           inset 6px 6px 10px rgba(0, 0, 0, 0.05),
+           inset -6px -6px 10px rgba(255,255,255,1),
+           6px 6px 10px rgba(255, 255, 255, 0.5);
+text-align:center;
+font-family:sans-serif;
+}
+
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu section{
+  display: inline-block;
+  color: #000;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  width:200px;
+  height:200px;
+  border:1px solid rgba(0,0,0,0.1);
+  margin:5%;
+}
+
+div.scrollmenu section:hover {
+background:#ccc;
+}
+#top{
+border-top:1px solid rgba(0,0,0,0.1);
+}
+
+#top section{
+display:flex;
+justify-content:center;
+align-items:center;
+  color: #000;
+  padding: 14px;
+  text-decoration: none;
+  width:324px;
+  height:150px;
+  border:1px solid rgba(0,0,0,0.1);
+  margin:5%;
+  transition: 0.4s;  
+}
+#top section:hover {
+background:#a4b0be;
+}
+#ul{
+list-style:none;
+margin:0 10%;
+border:1px solid rgba(0,0,0,0.1);
+padding:2%;
+}
+
+#ul li{
+border-bottom:1px solid rgba(0,0,0,0.1);}
+#ul a{
+color:#000;
+cursor:pointer;
+text-decoration:none;
+font-size:20px;
+display:none;
+}
+
+#check:checked ~ .slider{
+transform:translateX(0px);
+}
+
+#check{
+position:absolute;
+top:3%;
+left:-9999999px;
+}
+.slider{
+position:absolute;
+z-index:9;
+height:100vh;
+width:250px;
+background:crimson;
+transform:translateX(-250px);
+transition:all .4s;
+}
+.slider a{
+opacity:0.5;
+display:block;
+text-align:center;
+padding:6%;
+color:#fff;
+font-size:18px;
+text-decoration:none;
+border-bottom:1px solid rgba(0,0,0,0.1);
+}
+.slider a:hover {
+opacity:1;
+}
+.icon{
+position:absolute;
+top:3%;
+left:3%;
+width:22px;
+height:22px;
+}
+.spinner{
+height:3px;
+background:#fff;
+}
+
+.spinner.middle,
+.spinner.bottom{
+margin:3px;
+}
+.header a{
+margin:3%;
+}
+
+.image{
+width:150px;
+height:100px;
+}
+
+section p{
+overflow:scroll;
+}
+#loader{
+width:100%;
+height:100%;
+background:#fff;
+position:fixed;
+z-index:99999;
+}
+#loading{
+position:fixed;
+top:40%;
+left:35%;
+width:100px;
+height:100px;
+border:5px solid rgba(0,0,0,0.1);
+border-radius:50%;
+border-top:5px solid rgba(248, 255, 0, 0.8);
+box-shadow:-6px -6px 10px rgba(255, 255, 255, 1),
+           inset 6px 6px 10px rgba(0, 0, 0, 0.05),
+           inset -6px -6px 10px rgba(255,255,255,1),
+           6px 6px 10px rgba(255, 255, 255, 0.5);
+animation:animate 1s linear infinite;
+}
+
+@keyframes animate{
+0%{transform:rotate(0);}
+100%{transform:rotate(360deg);}
+}
+</style>
+</head>
+<body onload="myLoad()">
+<div id="loader" >
+<div id="loading"></div>
+</div>
+<div class="containers">
+<div class="header" >
+<h2>CardLite</h2>
+<a href="#"><i class="fas fa-cart-plus"></i></a>
+<a href="#"><i class="fas fa-plus"></i></a>
+</div>
+<input type="checkbox" id="check" >
+<label for="check" class="icon" >
+<div class="spinner top" ></div>
+<div class="spinner middle" ></div>
+<div class="spinner bottom" ></div>
+</label>
+<div class="slider" >
+<a href="#">Mobile</a>
+<a href="#">dress</a>
+<a href="#">toy</a>
+<a href="#">utensiles</a>
+<a href="#">t-shirt</a>  
+<a href="#">Speaker</a>
+</div>
+<div class="scroll">
+<a href="#" disabled="disabled" ><i class="fas fa-globe-asia"></i> All catogries</a>
+<a href="#">Mobile</a>
+<a href="#">dress</a>
+<a href="#">toy</a>
+<a href="#">computer</a>
+<a href="#">utensiles</a>
+<a href="#">t-shirt</a>  
+<a href="#">Speaker</a>
+</div>
+<div class="caurosal">
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="cover/1.jpeg" alt="" width="360px" height="100px" >
+    </div>
+    <div class="carousel-item">
+      <img src="cover/2.jpeg" alt="" width="360px" height="100px">
+    </div>
+    <div class="carousel-item">
+      <img src="cover/5.jpeg" alt="" width="360px" height="100px">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+</div>
+<input type="search" id="search" placeholder="Type Your Text" onclick="search()">
+<ul id="ul" >
+ <li><a href="#">Mobile</a></li>
+ <li><a href="#">dress</a></li>
+ <li><a href="#">langha</a></li>
+ <li><a href="#">t-shirt</a></li>
+ <li><a href="#">mobile phone under 10,000</a></li>
+ <li><a href="#">tv</a></li>
+ <li><a href="#">langha under 3,000</a></li>
+</ul>
+<div class="scrollmenu">
+  <section><img src="cover/1.jpeg" class="image"><h6>Image</h6>
+  <p>Lorem dolor site, consectetur adipiscing elit. Duis efficitur sapien ex, non facilisis velit vestibulum vitae. </p>
+  </section>
+  <section><img src="cover/2.jpeg" class="image"><h6>Rise Up</h6>
+  <p>Lorem ipsum amet, consectetur adipiscing elit. Duis efficitur sapien ex, non facilisis velit vestibulum vitae. </p>
+  </section>
+  <section><img src="cover/3.jpeg" class="image"><h6>Unknown Brain</h6>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur sapien ex, non facilisis velit vestibulum vitae. </p>
+  </section>
+  <section><img src="cover/4.jpeg" class="image"><h6>Satisfy</h6>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur sapien ex, non facilisis velit vestibulum vitae. </p>
+  </section>
+  <section><img src="cover/5.jpeg" class="image"><h6>Taki Taki</h6>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur sapien ex, non facilisis velit vestibulum vitae. </p>
+  </section>
+  <section><img src="cover/1.jpeg" class="image"><h6>Wonder</h6>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur sapien ex, non facilisis velit vestibulum vitae. </p>
+  </section>
+  <section><img src="cover/2.jpeg" class="image"><h6>Rise Up</h6>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur sapien ex, non facilisis velit vestibulum vitae. </p>
+  </section>
+  <section><img src="cover/3.jpeg" class="image"><h6>Imagine</h6>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur sapien ex, non facilisis velit vestibulum vitae. </p>
+  </section>
+  </div>
+<div id="top">
+   <section></section>
+   <section></section>
+   <section></section>
+   <section></section>
+</div>
+
+<section id="section" >
+
+</section>
+</div>
+
+<script type="text/javascript">
+
+var preloader = document.getElementById("loader");
+function myLoad(){
+preloader.style.display = "none"
+}
+
+function search(){
+
+let fiter = document.getElementById("search").value.toUpperCase();
+
+let ul = document.getElementById("ul");
+let li = ul.getElementsByTagName("li");
+
+for(var i = 0; i<li.length; i++){
+let a = li[i].getElementsByTagName("a")[0];
+
+let textValue = a.textContent || a.innerHTML;
+if(textValue.toUpperCase().indexOf(fiter) > -1){
+li[i].style.display = "";
+a.style.display = "block"
+}else{
+li[i].style.display = "none";
+}
+}
+
+
+}
+
+/*const url = "https://jsonplaceholder.typicode.com/posts";
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+  for(var x in data){
+  const para = document.createElement("p");
+  const node = document.createTextNode(data[x].title);
+  para.appendChild(node);
+  
+  const element = document.getElementById('section');
+  element.appendChild(para);
+ 
+  }
+  })*/
+  
+</script>
+</body>
+</html>
