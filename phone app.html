@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+*{
+margin:0;
+padding:0;
+}
+
+.container{
+width:100%;
+height:150vh;
+background:white;
+overflow:hidden;
+}
+
+.header{
+width:100%;
+height:10vh;
+box-shadow:-4px -4px 10px rgba(0,0,0,0.4);
+display:flex;
+justify-content:center;
+align-items:flex-start;
+}
+.header a{
+margin:6% 14%;
+color:#000;
+}
+.header a:nth-child(1):hover{
+color:lime;
+}
+
+.header a:nth-child(2):hover{
+color:blue;
+}
+
+.header a:nth-child(3):hover{
+color:orange;
+}
+
+.header i{
+margin:5% 14%;
+}
+#search{
+padding:3%;
+width:80%;
+border-radius:25px;
+border:none;
+border:1px solid rgba(0,0,0,0.1);
+box-shadow:-6px -6px 10px rgba(255, 255, 255, 1),
+           inset 6px 6px 10px rgba(0, 0, 0, 0.05),
+           inset -6px -6px 10px rgba(255,255,255,1),
+           6px 6px 10px rgba(255, 255, 255, 0.5);
+outline:none;
+margin:5% 10%;
+}
+
+#search:focus{
+outline:none;
+}
+#content{
+width:96%;
+height:8vh;
+border:1px solid rgba(0,0,0,0.1);
+border-radius:30px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:4% 2%;
+}
+
+#content a{
+text-decoration:none;
+color:#000;
+position:absolute;
+left:20%;
+margin-right:0;
+}
+
+#content i:nth-child(1){
+margin-top:0%;
+margin-right:80%;
+}
+
+#content i:nth-child(2){
+position:absolute;
+left:40%;
+}
+#keypad{
+position:fixed;
+top:-9999px;
+left:75%;
+border:1px solid rgba(0,0,0,0.1);
+border-radius:50%;
+display:grid;
+place-items:center;
+}
+#content:hover{
+background:rgba(0,0,0,0.1);
+}
+label i{
+color:magenta;
+position:fixed;
+top:45%;
+left:80%;
+width:70px;
+height:70px;
+}
+h6{
+text-align:center;
+font-size:15px;
+font-family:Arial,sans-serif;
+}
+
+#keypad:checked ~ .open{
+position:fixed;
+top:50%;
+transition:all .4s ease-out;
+}
+.open{
+width:100%;
+height:50vh;
+background:#ecf0f1;
+position:fixed;
+top:-9999px;
+border-radius:30px 30px 0px 0px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+.open input{
+width:70%;
+padding:4% 8%;
+outline:none;
+border:none;
+position:absolute;
+top:3%;
+right:5%;
+border-radius:30px;
+font-size:20px;
+}
+.form span{
+position:relative;
+margin-top:30%;
+}
+.open .num{
+font-size:30px;
+padding:0% 9%;
+margin:7% 3%;
+}
+#btn{
+margin-left:40%;
+margin-top:4%;
+color:lime;
+}
+
+
+</style>
+</head>
+<body>
+<div class="container" >
+<div class="header" >
+<a href="#" ><i class="fas fa-2x fa-phone-alt"></i></a>
+<a href="#" ><i class="fas fa-2x fa-user-circle"></i></a>
+<a href="setting.html"><i class="fas fa-2x fa-cogs"></i></a>
+</div>
+<div id="input">
+<form id="form" >
+<input type="search" id="search" placeholder="All Contacts" onclick="search1();">
+</form>
+</div>
+<h6>Call list</h6>
+<div id="content1">
+<ul id="myUl" >
+<li id="content" >
+<i class="fas fa-2x fa-user-circle"></i>
+<a href="call.html">mummy</a>
+<i class="fas fa-chevron-circle-right"></i>
+</li>
+<li id="content" >
+<i class="fas fa-2x fa-user-circle"></i>
+<a href="call.html">krish</a>
+<i class="fas fa-chevron-circle-right"></i>
+</li>
+<li id="content">
+<i class="fas fa-2x fa-user-circle"></i>
+<a href="call.html">varsha</a>
+<i class="fas fa-chevron-circle-right"></i>
+</li>
+<li id="content" >
+<i class="fas fa-2x fa-user-circle"></i>
+<a href="call.html">sony di</a>
+<i class="fas fa-chevron-circle-right"></i>
+</li>
+<li id="content" >
+<i class="fas fa-2x fa-user-circle"></i>
+<a href="call.html">Ravi</a>
+<i class="fas fa-chevron-circle-right"></i>
+</li>
+<li id="content" >
+<i class="fas fa-2x fa-user-circle"></i>
+<a href="call.html">Bikash</a>
+<i class="fas fa-chevron-circle-right"></i>
+</li>
+<li id="content" >
+<i class="fas fa-2x fa-user-circle"></i>
+<a href="call.html">Gyanendra</a>
+<i class="fas fa-chevron-circle-right"></i>
+</li>
+<li id="content" >
+<i class="fas fa-2x fa-user-circle"></i>
+<a href="call.html">Shiva</a>
+<i class="fas fa-chevron-circle-right"></i>
+</li>
+<li id="content" >
+<i class="fas fa-2x fa-user-circle"></i>
+<a href="call.html">Sandip</a>
+<i class="fas fa-chevron-circle-right"></i>
+</li>
+<li id="content" >
+<i class="fas fa-2x fa-user-circle"></i>
+<a href="call.html">Promod</a>
+<i class="fas fa-chevron-circle-right"></i>
+</li>
+<li id="content" >
+<i class="fas fa-2x fa-user-circle"></i>
+<a href="call.html">sangita</a>
+<i class="fas fa-chevron-circle-right"></i>
+</li>
+<li id="content" >
+<i class="fas fa-2x fa-user-circle"></i>
+<a href="call.html">puja</a>
+<i class="fas fa-chevron-circle-right"></i>
+</li>
+</ul>
+</div>
+<input type="checkbox" id="keypad" checked="checked"><label for="keypad"><i class="fas fa-2x fa-keyboard"></i></label>
+<div class="open">
+<form class="form" name="calc" >
+<input type="text" id="text" name="txt" readonly="readonly" class="value">
+<span class="num" onclick="document.calc.txt.value =''">×</span>
+<span class="num" onclick="document.calc.txt.value +='1'">1</span>
+<span class="num" onclick="document.calc.txt.value +='2'">2</span>
+<span class="num" onclick="document.calc.txt.value +='3'">3</span>
+<span class="num" onclick="document.calc.txt.value +='4'">4</span>
+<span class="num" onclick="document.calc.txt.value +='5'">5</span>
+<span class="num" onclick="document.calc.txt.value +='6'">6</span>
+<span class="num" onclick="document.calc.txt.value +='7'">7</span>
+<span class="num" onclick="document.calc.txt.value +='8'">8</span>
+<span class="num" onclick="document.calc.txt.value +='9'">9</span>
+<span class="num" onclick="document.calc.txt.value +='#'">#</span>
+<span class="num" onclick="document.calc.txt.value +='0'">0</span>
+<a href="call.html" id="btn" ><i class="fas fa-2x fa-phone-slash"></i></a>
+</form>
+</div>
+</div>
+<script type="text/javascript">
+
+const search1 = () =>{
+
+let filter = document.getElementById("search").value.toUpperCase();
+let ul = document.getElementById("myUl");
+let li = ul.getElementsByTagName("li");
+
+
+for(var i = 0;i<li.length;i++){
+let a = li[i].getElementsByTagName("a")[0];
+
+let textValue = a.textContent || a.innerHTML;
+
+if(textValue.toUpperCase().indexOf(filter) > -1){
+li[i].style.display = ""
+}else{
+li[i].style.display = "none"
+}
+
+}
+}
+</script>
+</body>
+</html>
