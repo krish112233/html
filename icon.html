@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+
+*{
+margin:0;
+padding:0;
+}
+
+body{
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#000;
+}
+
+.box{
+width:70%;
+height:60vh;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:10px;
+border:10px solid rgba(255,255,255,0.1);
+}
+.box i{
+color:#262626;
+}
+.box label{
+width:70px;
+height:70px;
+border:4px solid rgba(255,255,255,0.1);
+display:grid;
+place-items:center;
+position:absolute;
+top:24%;
+left:20%;
+border-radius:10px;
+}
+.box label:hover > i{
+color:#fff;
+text-shadow:0px 0px 10px rgba(33,156,243,1),
+           0px 0px 20px rgba(33,156,243,1),;
+}
+.box label:hover{
+border-color:#fff;
+box-shadow:0px 0px 10px rgba(33,156,243,.5),
+           0px 0px 20px rgba(33,156,243,.5),
+           0px 0px 30px rgba(33,156,243,.5),
+           inset 0px 0px 10px rgba(33,156,243,1);
+}
+
+.box2 i{
+color:#262626;
+}
+.box2 label{
+width:70px;
+height:70px;
+border:4px solid rgba(255,255,255,0.1);
+display:grid;
+place-items:center;
+position:absolute;
+top:24%;
+left:55%;
+border-radius:10px;
+}
+.box2 label:hover > i{
+color:#fff;
+text-shadow:0px 0px 10px rgba(33,156,243,1),
+           0px 0px 20px rgba(33,156,243,1),;
+}
+.box2 label:hover{
+border-color:#fff;
+box-shadow:0px 0px 10px rgba(33,156,243,.5),
+           0px 0px 20px rgba(33,156,243,.5),
+           0px 0px 30px rgba(33,156,243,.5),
+           inset 0px 0px 10px rgba(33,156,243,1);
+}
+
+.box3 i{
+color:#262626;
+}
+.box3 label{
+width:70px;
+height:70px;
+border:4px solid rgba(255,255,255,0.1);
+display:grid;
+place-items:center;
+position:absolute;
+top:44%;
+left:20%;
+border-radius:10px;
+}
+.box3 label:hover > i{
+color:#fff;
+text-shadow:0px 0px 10px rgba(33,156,243,1),
+           0px 0px 20px rgba(33,156,243,1),;
+}
+.box3 label:hover{
+border-color:#fff;
+box-shadow:0px 0px 10px rgba(33,156,243,.5),
+           0px 0px 20px rgba(33,156,243,.5),
+           0px 0px 30px rgba(33,156,243,.5),
+           inset 0px 0px 10px rgba(33,156,243,1);
+}
+
+
+.box4 label{
+width:70px;
+height:70px;
+border:4px solid rgba(255,255,255,0.1);
+display:grid;
+place-items:center;
+position:absolute;
+top:44%;
+left:55%;
+color:#262626;
+border-radius:10px;
+}
+.box4 label:hover > i{
+color:#fff;
+text-shadow:0px 0px 10px rgba(33,156,243,1),
+           0px 0px 20px rgba(33,156,243,1),;
+}
+.box4 label:hover{
+border-color:#fff;
+box-shadow:0px 0px 10px rgba(33,156,243,.5),
+           0px 0px 20px rgba(33,156,243,.5),
+           0px 0px 30px rgba(33,156,243,.5),
+           inset 0px 0px 10px rgba(33,156,243,1);
+}
+
+
+.box5 label{
+width:70px;
+height:70px;
+border:4px solid rgba(255,255,255,0.1);
+display:grid;
+place-items:center;
+position:absolute;
+top:64%;
+left:20%;
+color:#262626;
+border-radius:10px;
+}
+.box5 label:hover > i{
+color:#fff;
+text-shadow:0px 0px 10px rgba(33,156,243,1),
+           0px 0px 20px rgba(33,156,243,1),;
+}
+.box5 label:hover{
+border-color:#fff;
+box-shadow:0px 0px 10px rgba(33,156,243,.5),
+           0px 0px 20px rgba(33,156,243,.5),
+           0px 0px 30px rgba(33,156,243,.5),
+           inset 0px 0px 10px rgba(33,156,243,1);
+}
+
+.box6 label{
+width:70px;
+height:70px;
+border:4px solid rgba(255,255,255,0.1);
+display:grid;
+place-items:center;
+position:absolute;
+top:64%;
+left:55%;
+color:#262626;
+border-radius:10px;
+}
+.box6 label:hover > i{
+color:#fff;
+}
+.box6 label:hover{
+border-color:#fff;
+box-shadow:0px 0px 10px rgba(33,156,243,.5),
+           0px 0px 20px rgba(33,156,243,.5),
+           0px 0px 30px rgba(33,156,243,.5),
+           inset 0px 0px 10px rgba(33,156,243,1);
+}
+
+input[type="checkbox"]{
+position:absolute;
+top:0;
+left:-99999px;
+}
+h3{
+position:absolute;
+top:10%;
+left:30%;
+color:gray;
+font-size:25px;
+font-family:monospace;
+}
+</style>
+</head>
+<body>
+<h3>Icon Effect</h3>
+<div class="box" >
+<input type="checkbox" id="check" ><label for="check"><i class="fas fa-2x fa-wifi"></i></label>
+</div>
+<div class="box2" >
+<input type="checkbox" id="check2"><label for="check2"><i class="fas fa-2x fa-rocket"></i></label>
+</div>
+<div class="box3" >
+<input type="checkbox" id="check3"><label for="check3"><i class="fas fa-2x fa-bell"></i></label>
+</div>
+<div class="box4" >
+<input type="checkbox" id="check4"><label for="check4"><i class="fas fa-2x fa-location-arrow"></i></label>
+</div>
+
+<div class="box5" >
+<input type="checkbox" id="check5"><label for="check5"><i class="fab fa-2x fa-bluetooth-b"></i></label>
+</div>
+<div class="box6" >
+<input type="checkbox" id="check6"><label for="check6"><i class="fas fa-2x fa-lock"></i></label>
+</body>
+</html>
