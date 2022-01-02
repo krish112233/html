@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+section{
+position:relative;
+width:100%;
+height:100vh;
+background:#000;
+transform-style:preserve-3d;
+perspective:1000px;
+overflow:hidden;
+}
+section .container{
+position:relative;
+width:100%;
+height:100vh;
+display:flex;
+}
+.container span{
+width:0.5vw;
+height:100%;
+background:#fff;
+border-top:33.333vh solid #ff9933;
+border-bottom:33.333vh solid #138808;
+}
+.img{
+position:absolute;
+top:50%;
+left:50%;
+transform:;
+height:33vh;
+border-radius:50%;
+z-index:1000;
+animation:animate 24s linear infinite;
+}
+@keyframes animate{
+0%{transform:translate(-50%,-50%) rotate(0);}
+100%{transform:translate(-50%,-50%) rotate(360deg);}
+}
+</style>
+</head>
+<body>
+<section>
+  <div class="container">
+  <img src="/storage/emulated/0/Chakra.png" class="img" >
+  </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script type="text/javascript">
+for(let i = 1;i<=200;i++){
+let bars = document.createElement('span');
+document.querySelector(".container").appendChild(bars)
+
+}
+
+TweenMax.from('.container span',{
+transform: "translateY(1000px)",
+zIndex: 100,
+delay: 1,
+
+stagger: {
+from: "random",
+amount: 10
+
+}
+})
+
+TweenMax.from('.img',0.5,{
+opacity: 0,
+delay: 11.5
+})
+</script>
+</body>
+</html>
