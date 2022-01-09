@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+<style type="text/css">
+*{
+margin:0;
+padding:0;
+}
+.container{
+width:100%;
+height:100vh;
+
+}
+
+.header{
+width:100%;
+height:20vh;
+background:rgba(0,0,0,0.08);
+}
+.content{
+width:100%;
+height:80vh;
+background:rgba(0, 39, 255, 0.8);
+}
+.conten-item2{
+width:90%;
+height:40vh;
+background:#fff;
+margin-left:0;
+border:18px solid crimson;
+}
+.conten-item2 h3{
+color:#000;
+text-align:center;
+font-family:'POPPINS',sans-serif;
+border-bottom:2px solid rgba(33,156,243,5);
+width:50%;
+margin-left:25%;
+}
+.conten-item2 p{
+color:#000;
+text-align:center;
+font-family:'POPPINS',sans-serif;
+padding:5%;
+}
+#image{
+width:50px;
+height:50px;
+position:absolute;
+border-radius:50%;
+top:1%;
+left:12%;
+border:3px solid #00fd0a;
+}
+.conten-item{
+width:80%;
+height:40vh;
+position:absolute;
+top:22%;
+left:10%;
+clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+background:url(boy1.jpeg);
+background-size:cover;
+border:8px solid #f1c40f;
+border-radius:5px;
+}
+.content-menu {
+width:100%;
+height:50vh;
+}
+.content-menu h3{
+position:absolute;
+top:56%;
+font-size:20px;
+left:10%;
+color:#fff;
+font-family:'POPPINS',sans-serif;
+font-weight:bolder;
+}
+.content-menu p{
+position:absolute;
+top:64%;
+left:5%;
+color:#fff;
+padding:5%;
+text-align:center;
+font-family:'POPPINS',sans-serif;
+border:5px solid rgba(0,0,0,0.1);
+}
+.content-menu p:hover{
+background: #fa8231;
+animation:all 4s linear ;
+border:none;
+border-radius:5px;
+}
+
+@keyframes all{
+0%{transform:rotate(0);}
+100%{transform:rotate(360deg);}
+}
+</style>
+</head>
+<body>
+<div class="container" >
+   <div class="header" >
+   <div class="conten-item2" >
+      <h3>Testimonies</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <img src="lion.jpeg" id="image" >
+   </div>
+   </div>
+   <div class="content">
+      <div class="conten-item" ></div>
+      <div class="content-menu" >
+       <h3>GEORGE STEPHEN</h3>
+      <p>Sed nec viverra libero. Praesent viverra magna sed neque porttitor ultrices. Duis a nunc molestie, scelerisque nulla quis, porta mi. Curabitur posuere sapien eu leo egestas, a rutrum lorem tristique. Aliquam eu tempus mauris. Ut velit sem, rutrum ut eros a, vestibulum feugiat nisl.</p>
+      </div>
+   </div>
+</div>
+</body>
+</html>
